@@ -65,7 +65,7 @@ class Object
   end
 
   in_ruby_version("1.9", "2") do
-    public :method_missing
+    #public :method_missing
   end
 end
 
