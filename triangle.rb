@@ -15,6 +15,19 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  sides = [a,b,c].sort
+
+  raise TriangleError unless sides.each { |side|
+    side > 0
+  }
+
+  if(sides[0] + sides[1] <= sides[2])
+    raise TriangleError
+  end
+
+  types = [:equilateral, :isosceles, :scalene]
+  value = sides.uniq.size - 1
+  return types[value]
 end
 
 # Error class used in part 2.  No need to change this code.
